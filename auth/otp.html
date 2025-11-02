@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کد یکبار مصرف (OTP) | مرکز دانلود بازی‌های ویدیویی</title>
+<style>
+:root {
+  --primary-color: rgb(139 208 239);
+  --accent-color: #0366d6;
+  --bg-color: rgb(139 208 239);
+  --card-bg: rgb(0 53 70);
+  --border-color: #ddd;
+  --error-color: #c53030;
+  font-family: Vazirmatn, sans-serif;
+}
+body {
+  background: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.wrapper {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  width: 420px;
+  max-width: 95%;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+.inputs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+input.otp {
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  font-size: 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
+.small {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+p {
+  color: rgb(139 208 239);
+}
+</style>
+</head>
+<body>
+<main class="wrapper" role="main" aria-labelledby="otp-title">
+  <h1 id="otp-title">وارد کردن کد یکبار مصرف</h1>
+  <p class="small">کدی که به ایمیل یا تلفن شما ارسال شده را وارد کنید.</p>
+  <form action="/auth/verify-otp" method="post" id="otpForm" autocomplete="one-time-code">
+    <div class="inputs" role="group" aria-label="کد ۶ رقمی">
+      <input class="otp" name="otp1" inputmode="numeric" pattern="[0-9]" maxlength="1" required>
+      <input class="otp" name="otp2" inputmode="numeric" pattern="[0-9]" maxlength="1" required>
+      <input class="otp" name="otp3" inputmode="numeric" pattern="[0-9]" maxlength="1" required>
+      <input class="otp" name="otp4" inputmode="numeric" pattern="[0-9]" maxlength="1" required>
+      <input class="otp" name="otp5" inputmode="numeric" pattern="[0-9]" maxlength="1" required>
+      <input class="otp" name="otp6" inputmode="numeric" pattern="[0-9]" maxlength="1" required>
+    </div>
+    <button type="submit">تایید کد</button>
+  </form>
+  <p class="small">زمان اعتبار کد: <strong id="timer">02:00</strong></p>
+  <p class="small"><a href="forgot.html">ارسال مجدد کد</a></p>
+</main>
+
+<script>
+// حرکت خودکار بین باکس‌های OTP
+const inputs = Array.from(document.querySelectorAll('.otp'));
+inputs.forEach((inp, i) => {
+  inp.addEventListener('input', () => {
+    if (inp.value.length) inputs[Math.min(i+1, inputs.length-1)].focus();
+  });
+  inp.addEventListener('keydown', (e) => {
+    if (e.key === 'Backspace' && !inp.value) inputs[Math.max(0, i-1)].focus();
+  });
+});
+
+// تایمر ساده
+let sec = 120;
+const timerEl = document.getElementById('timer');
+const timerInterval = setInterval(() => {
+  if (sec <= 0) return clearInterval(timerInterval);
+  sec--;
+  const m = Math.floor(sec/60).toString().padStart(2,'0');
+  const s = (sec%60).toString().padStart(2,'0');
+  timerEl.textContent = `${m}:${s}`;
+}, 1000);
+</script>
+</body>
+</html>
