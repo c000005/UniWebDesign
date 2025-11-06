@@ -34,7 +34,6 @@ main {
 label {
   font-size: 0.95rem;
   margin-bottom: 0.25rem;
-  color: rgb(139 208 239);
 }
 
 textarea, input, button {
@@ -92,7 +91,7 @@ input, select {
   width: calc(100% - 0.75rem * 2);
   padding: 0.7rem;
   margin: 6px 0 0;
-  border: 1px solid var(--border-color);
+  border: 1px solid;
   border-radius: 8px;
   font-size: 0.95rem;
 }
@@ -110,7 +109,7 @@ input.otp {
   height: 48px;
   text-align: center;
   font-size: 1.25rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid;
   border-radius: 8px;
 }
 
@@ -179,7 +178,6 @@ input.otp {
 }
 
 .card {
-  background: var(--card-bg);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
