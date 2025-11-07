@@ -1,69 +1,75 @@
+@import url(dark.css);
+
 body {
   margin: 0;
-  padding: 0;
-  background-color: rgb(139 208 239);
-  color: rgb(0 53 70);
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-primary);
+}
+
+.farq {
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(139 208 239);
-  height: 100vh;
+  height:100vh;
 }
 
-header {
-  background-color: rgb(139 208 239);
-  color: rgb(0 53 70);
+footer {
+  background: var(--md-sys-color-background);
+  color: var(--md-sys-color-primary);
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 a {
-  color: rgb(139 208 239);
   text-decoration: none;
 }
 
 p {
-  color: rgb(0 53 70)
+  color: var(--md-sys-color-secondary);
 }
 
-main {
-  padding: 40px 20px;
-  text-align: center;
-}
 
 label {
   font-size: 0.95rem;
   margin-bottom: 0.25rem;
+  color: var(--md-sys-color-primary);
 }
 
-textarea, input, button {
-  background: rgb(139 208 239);
-  color: rgb(0 53 70);
+textarea,
+input,
+button {
+  background: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-primary);
   padding: 12px;
-  border: solid rgb(46 45 77);
   border-radius: 8px;
 }
 
-footer {
+footer>p {
   margin-top: 2rem;
   padding: 1rem 0;
   text-align: center;
-  background: rgb(139 208 239);
-  color: rgb(0 53 70);
+  background: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-primary);
 }
 
 section {
   max-width: 900px;
   margin: 2rem auto;
-  background-color: rgb(198 194 234);
+  background-color: var(--md-sys-color-secondary);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
-  color: rgb(139 208 239);
+  color: var(--md-sys-color-primary);
   margin-bottom: 1rem;
 }
 
@@ -77,17 +83,18 @@ button {
   padding: 0.8rem;
   border: none;
   border-radius: 8px;
-  background: rgb(139 208 239);
-  color: rgb(0 53 70);
+  background: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-primary);
   cursor: pointer;
   margin-top: 0.5rem;
 }
 
 button:hover {
-  background: #0366d6;
+  background: var(--md-sys-color-on-primary);
 }
 
-input, select {
+input,
+select {
   width: calc(100% - 0.75rem * 2);
   padding: 0.7rem;
   margin: 6px 0 0;
@@ -96,16 +103,15 @@ input, select {
   font-size: 0.95rem;
 }
 
-input[type="email"], input[type="password"] {
+input[type="email"],
+input[type="password"] {
   padding: 0.7rem;
-  border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 0.95rem;
-  background: rgb(223 227 231);
 }
 
 input.otp {
-  width: 48px;
+  width: 30px;
   height: 48px;
   text-align: center;
   font-size: 1.25rem;
@@ -113,22 +119,46 @@ input.otp {
   border-radius: 8px;
 }
 
+.nav-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  background: var(--md-sys-color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  gap: 25px;
+  color: var(--md-sys-color-primary);
+  list-style-type: none;
+}
+
+
+.container {
+  background-color: var(--md-sys-color-secondary);
+  padding: 30px;
+  width: 320px;
+  border-radius: 12px;
+  text-align: right;
+}
+
 .team-member img {
   width: 180px;
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgb(0 53 70);
 }
 
 .team-member {
   margin-top: 1rem;
-  color: rgb(0 53 70);
+  color: var(--md-sys-color-primary);
   text-align: center;
 }
 
 .team-member p {
-  color: rgb(0 53 70);
+  color: var(--md-sys-color-primary);
   font-size: 1rem;
 }
 
@@ -136,32 +166,21 @@ input.otp {
   font-size: 0.9rem;
   text-align: center;
   margin-top: 0.5rem;
-  color: rgb(139 208 239);
-}
-
-.box {
-  background: rgb(0 53 70);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  width: 380px;
-  max-width: 95%;
+  color: var(--md-sys-color-primary);
 }
 
 .container {
-  background: rgb(0 53 70);
+  background: var(--md-sys-color-secondary);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   width: 360px;
   max-width: 95%;
 }
 
 .wrapper {
-  background: rgb(0 53 70);;
+  background: var(--md-sys-color-secondary);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   width: 420px;
   max-width: 95%;
 }
@@ -180,7 +199,6 @@ input.otp {
 .card {
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   width: 420px;
   max-width: 95%;
 }
