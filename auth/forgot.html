@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
-<body>
-<main class="box" role="main" aria-labelledby="forgot-title">
+<body class="farq">
+  <div class="container">
   <h1 id="forgot-title">فراموشی رمز عبور</h1>
   <p class="small">ایمیل خود را وارد کنید تا لینک یا کد بازیابی رمز برای شما ارسال شود.</p>
   <form action="/auth/forgot-password" method="post" id="forgotForm" novalidate>
@@ -20,17 +20,6 @@
     <button type="submit">ارسال لینک بازیابی</button>
   </form>
   <p class="small"><a href="login.html">بازگشت به ورود</a></p>
-</main>
-
-<script>
-document.getElementById('forgotForm').addEventListener('submit', function(e){
-  const email = document.getElementById('email');
-  document.getElementById('emailError').textContent = '';
-  if(!email.value.includes('@')){
-    document.getElementById('emailError').textContent = 'ایمیل نامعتبر است';
-    e.preventDefault();
-  }
-});
-</script>
+</div>
 </body>
 </html>
