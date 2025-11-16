@@ -8,32 +8,32 @@
 </head>
 <body class="farq">
 
-  <div class="container">
-    <h1 id="login-title">ورود به حساب</h1>
-    <p class="small">با حساب کاربری خود وارد شوید تا بتوانید بازی‌ها را دانلود کنید.</p>
+<main class="container">
+  <h1 id="login-title">ورود به حساب</h1>
+  <p class="small">با حساب کاربری خود وارد شوید تا بتوانید بازی‌ها را دانلود کنید.</p>
 
-    <form id="loginForm" action="/auth/login" method="post" novalidate>
-      <div>
-        <label for="email">ایمیل</label>
-        <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
-        <div class="error" id="emailError" aria-live="polite"></div>
-      </div>
+  <form id="loginForm" action="/auth/login" method="post" novalidate>
+    <div>
+      <label for="email">ایمیل</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+      <div class="error" id="emailError" aria-live="polite"></div>
+    </div>
 
-      <div>
-        <label for="password">رمز عبور</label>
-        <input id="password" name="password" type="password" required minlength="8" placeholder="رمز عبور" autocomplete="current-password">
-        <div class="error" id="passwordError" aria-live="polite"></div>
-      </div>
+    <div>
+      <label for="password">رمز عبور</label>
+      <input id="password" name="password" type="password" required minlength="8" placeholder="رمز عبور" autocomplete="current-password">
+      <div class="error" id="passwordError" aria-live="polite"></div>
+    </div>
 
-      <div class="text-right">
-        <a href="forgot.html">رمز عبور را فراموش کرده‌اید؟</a>
-      </div>
+    <div class="text-right">
+      <a href="forgot.html">رمز عبور را فراموش کرده‌اید؟</a>
+    </div>
 
-      <button type="submit">ورود</button>
-    </form>
+    <button type="submit">ورود</button>
+  </form>
 
-    <p class="small">حساب ندارید؟ <a href="register.html">ثبت‌نام</a></p>
-  </div>
+  <p class="small">حساب ندارید؟ <a href="register.html">ثبت‌نام</a></p>
+</main>
 
 </body>
 </html>

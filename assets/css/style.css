@@ -16,6 +16,16 @@ body {
   color: var(--md-sys-color-on-background);
 }
 
+a {
+  text-decoration: none;
+  color: var(--md-sys-color-primary);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--md-sys-color-on-primary-container);
+}
+
 .nav-bar {
   position: fixed;
   top: 0;
@@ -33,8 +43,6 @@ body {
 }
 
 .nav-bar a {
-  color: var(--md-sys-color-primary);
-  text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
@@ -47,10 +55,7 @@ body {
 
 .hero {
   height: 90vh;
-  background: linear-gradient(
-      rgba(15, 20, 23, 0.65),
-      rgba(15, 20, 23, 0.9)
-    ),
+  background: linear-gradient(rgba(15, 20, 23, 0.65), rgba(15, 20, 23, 0.9)),
     url('../img/hero-bg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -80,10 +85,7 @@ body {
   color: var(--md-sys-color-on-background);
 }
 
-section,
-.container,
-.card,
-.wrapper {
+main, section, .container {
   max-width: 900px;
   margin: 2rem auto;
   padding: 2rem;
@@ -117,18 +119,13 @@ label {
   color: var(--md-sys-color-on-surface);
 }
 
-input,
-textarea,
-select,
-button {
+input, textarea, select, button {
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.25s ease;
 }
 
-input,
-textarea,
-select {
+input, textarea, select {
   width: 100%;
   padding: 0.7rem;
   border: 1px solid var(--md-sys-color-outline);
@@ -136,17 +133,14 @@ select {
   color: var(--md-sys-color-on-surface);
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+input:focus, textarea:focus, select:focus {
   outline: none;
   border-color: var(--md-sys-color-primary);
   background: rgba(27, 32, 35, 0.9);
   box-shadow: 0 0 6px rgba(139, 208, 239, 0.4);
 }
 
-button,
-.btn {
+button, .btn {
   padding: 0.9rem 1.2rem;
   border: none;
   background: var(--md-sys-color-primary);
@@ -160,8 +154,7 @@ button,
   box-shadow: 0 0 8px rgba(139, 208, 239, 0.4);
 }
 
-button:hover,
-.btn:hover {
+button:hover, .btn:hover {
   background: var(--md-sys-color-primary-container);
   color: var(--md-sys-color-on-primary-container);
   transform: translateY(-2px);
@@ -216,22 +209,6 @@ button:hover,
   margin-bottom: 1rem;
 }
 
-a {
-  text-decoration: none;
-  color: var(--md-sys-color-primary);
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--md-sys-color-on-primary-container);
-}
-
-.small {
-  font-size: 0.9rem;
-  text-align: center;
-  color: var(--md-sys-color-on-surface-variant);
-}
-
 .team-member {
   text-align: center;
   margin-top: 1.5rem;
@@ -247,23 +224,6 @@ a:hover {
   box-shadow: 0 0 15px rgba(139, 208, 239, 0.3);
 }
 
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: rgba(15, 20, 23, 0.35);
-  backdrop-filter: blur(10px);
-  color: var(--md-sys-color-on-surface);
-  font-size: 0.9rem;
-  border-top: 1px solid var(--md-sys-color-outline-variant);
-}
-
-.farq {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .game-detail {
   display: flex;
   flex-wrap: wrap;
@@ -274,4 +234,31 @@ footer {
 .game-detail img {
   width: 350px;
   border-radius: 12px;
+}
+
+.small {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.text-right {
+  text-align: right;
+}
+
+.farq {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(15, 20, 23, 0.35);
+  backdrop-filter: blur(10px);
+  color: var(--md-sys-color-on-surface);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--md-sys-color-outline-variant);
 }
