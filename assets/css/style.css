@@ -331,22 +331,28 @@ footer {
     align-items: center;
     justify-content: center;
 
-    font-family: inherit;
-    font-weight: 500;
-    white-space: nowrap;
-    cursor: pointer;
-    user-select: none;
+    height: 40px;
+    padding: 0 24px;
 
+    font-family: inherit;
+    font-size: var(--md-sys-typescale-label-large-size);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    line-height: var(--md-sys-typescale-label-large-line-height);
+
+    white-space: nowrap;
     border-radius: 9999px;
-    border: none;
     outline: none;
 
-    transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    box-shadow 0.2s ease;
-
+    border: none;
+    cursor: pointer;
+    user-select: none;
     text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.1s ease;
 }
 
 .m3-btn.x-small {
@@ -411,13 +417,74 @@ footer {
     padding-right: 12px;
 }
 
+m3-btn.round {
+    border-radius: 9999px;
+}
+
+m3-btn.enabled {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+m3-btn.hover:hover {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.m3-btn.focus:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(139, 208, 239, 0.25);
+}
+
+.m3-btn.pressed:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.m3-btn.disabled,
+.m3-btn:disabled,
+.m3-btn[aria-disabled="true"] {
+    background-color: var(--md-sys-color-on-surface);
+    color: var(--md-sys-color-on-surface);
+    opacity: 0.38;
+    cursor: default;
+    pointer-events: none;
+    box-shadow: none;
+}
+
 .m3-card {
-    border-radius: 12px;
-    padding: 16px;
     background-color: var(--md-sys-color-surface-container);
     color: var(--md-sys-color-on-surface);
+    border-radius: 12px;
+    padding: 16px;
 
-    transition: box-shadow 0.2s ease;
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.1s ease,
+        background-color 0.2s ease;
+}
+
+.m3-card.enabled {
+    box-shadow: none;
+}
+
+m3-card.hover:hover {
+    box-shadow:
+        0px 2px 6px rgba(0,0,0,0.3),
+        0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.m3-card.focus:focus-visible {
+    outline: none;
+    box-shadow:
+        0 0 0 2px var(--md-sys-color-primary),
+        0 4px 12px rgba(0,0,0,0.25);
+}
+
+.m3-card.pressed:active {
+    transform: scale(0.98);
+    box-shadow:
+        0px 1px 3px rgba(0,0,0,0.4);
 }
 
 .m3-card.filled {
